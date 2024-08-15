@@ -9,10 +9,10 @@ _Ocean's Wrath_ é um roguelite de sobrevivência ambientado em um mundo pós-ap
 
 ## Mecânicas Principais: 
 - **Sistema de Ondas:** Ondas de inimigos que irão mudando e dificultando com o passar do tempo.
-- **Upgrades:** Upgrades de Armas, Defesas e Habilidades por meio das moedas obtidas derrotando inimigos.
-- **Estética:** Opções de customização do navio, compradass por meio de uma moeda mais rara que pode ser obtida concluindo runs ou por microtransações.
+- **Upgrades:** Upgrades temporários que servem apenas para a partida atual de Armas, Defesas e Habilidades por meio das moedas obtidas derrotando inimigos, e upgrades fixos que podem ser obtidos antes do início de cada run.
+- **Estética:** Opções de customização do navio, compradas por meio de uma moeda mais rara que pode ser obtida concluindo runs ou por microtransações.
 - **Desafios:** Desafios simples que caso sejam vencidos dão moedas bonus ao player.
-- **Recursos:** O jogador teria que controlar as moedas obtidas para fazer os upgrades corretos.
+- **Recursos:** O jogador teria que controlar as moedas obtidas para fazer os upgrades nescessários que o ajudem a sobreviver por mais tempo.
 - **Objetivo:** Sobreviver certa quantidade de ondas de inimigos e derrotar um chefão final.
 
 **Sprites Úteis**
