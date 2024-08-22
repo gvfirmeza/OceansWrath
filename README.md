@@ -28,3 +28,6 @@ _Ocean's Wrath_ é um roguelite de sobrevivência ambientado em um mundo pós-ap
 - https://w.wallhaven.cc/full/57/wallhaven-57rdg5.png
 - https://rishikiram.itch.io/ship-pixel-sprite
 - https://www.artstation.com/artwork/9NOv0v
+- https://stock.adobe.com/br/images/8-bit-pixel-art-of-a-pirate-ship-on-the-open-seas/551003046#state=%7B%22ac%22%3A%22stock.adobe.com%22%7D&token_type=bearer&expires_in=86399
+- https://craftpix.net/freebies/free-underwater-enemies-pixel-art-character-pack/
+- https://craftpix.net/freebies/octopus-jellyfish-shark-and-turtle-free-sprite-pixel-art/
