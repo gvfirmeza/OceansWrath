@@ -19,6 +19,7 @@ _Ocean's Wrath_ é um roguelite de sobrevivência ambientado em um mundo pós-ap
 - **[Vampire Survivors:](https://store.steampowered.com/app/1794680/Vampire_Survivors/)** É um jogo casual de terror gótico com elementos roguelite onde suas escolhas podem fazer você crescer rapidamente e aniquilar os milhares de monstros que aparecem pelo caminho.
 - **[20 Minutes Till Dawn:](https://store.steampowered.com/app/1966900/20_Minutes_Till_Dawn/)** Dispare em uma horda ascendente de monstros baseados em Lovecraftian para sobreviver à noite. Faça escolhas dentre uma variedade de melhorias para criar combinações únicas e devastadoras.
 - **[Brotato:](https://store.steampowered.com/app/1942280/Brotato/)** É um jogo de tiro de arena estilo roguelite e com visão aérea no qual você controla uma batata portando até 6 armas e enfrenta hordas de alienígenas.
+- [Soulstone Survivors](https://store.steampowered.com/app/2066020/Soulstone_Survivors/): Neste Roguelite de ação, desvende magias secretas, forge dezenas de armas, desbloqueie personagens, descubra sinergias roubadas e conquiste o poder do vazio.
 
 **Sprites Úteis**
 - https://helianthus-games.itch.io/pixel-art-viking-ship-16-directions
