@@ -21,6 +21,8 @@ _Ocean's Wrath_ é um roguelite de sobrevivência ambientado em um mundo pós-ap
 - **[Brotato:](https://store.steampowered.com/app/1942280/Brotato/)** É um jogo de tiro de arena estilo roguelite e com visão aérea no qual você controla uma batata portando até 6 armas e enfrenta hordas de alienígenas.
 - [Soulstone Survivors](https://store.steampowered.com/app/2066020/Soulstone_Survivors/): Neste Roguelite de ação, desvende magias secretas, forge dezenas de armas, desbloqueie personagens, descubra sinergias roubadas e conquiste o poder do vazio.
 
+**Miro:** https://miro.com/app/board/uXjVKmnkk5Y=/?share_link_id=723535353498
+
 **Sprites Úteis**
 - https://helianthus-games.itch.io/pixel-art-viking-ship-16-directions
 - https://rainamoonart.itch.io/octopus-sprite-idle-animation
