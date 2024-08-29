@@ -37,3 +37,10 @@ _Ocean's Wrath_ é um roguelite de sobrevivência ambientado em um mundo pós-ap
 
 **Miro:** 
 - https://miro.com/app/board/uXjVKmnkk5Y=/?share_link_id=723535353498
+
+**Colaboradores**
+- Gabriel Firmamento
+- Guilherme Firmeza
+- Paulo Costa
+- Gustavo Raia
+- Guilherme Bastos
