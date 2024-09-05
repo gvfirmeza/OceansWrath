@@ -35,6 +35,9 @@ _Ocean's Wrath_ é um roguelite de sobrevivência ambientado em um mundo pós-ap
 - https://craftpix.net/freebies/octopus-jellyfish-shark-and-turtle-free-sprite-pixel-art/
 - https://dribbble.com/shots/24148450-Seabed-Pixel-Art-Top-Down-Tileset
 
+**Trello:**
+- [Clique Aqui.](https://trello.com/invite/b/66d128f97418c2da607b3dea/ATTI910478c942692fddf4f417ed9e54a883ACC075FB/organizacao-forro)
+
 **Miro:** 
 - https://miro.com/app/board/uXjVKmnkk5Y=/?share_link_id=723535353498
 
