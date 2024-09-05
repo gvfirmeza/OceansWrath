@@ -47,7 +47,8 @@ metadata/_edit_group_ = true
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_2esd5")
 animation = &"nadar_red"
-frame_progress = 0.998743
+frame = 4
+frame_progress = 0.825262
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)

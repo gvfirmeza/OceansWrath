@@ -27,7 +27,7 @@ animations = [{
 size = Vector2(106, 54)
 
 [node name="Player" type="Area2D"]
-position = Vector2(110, 80)
+position = Vector2(684, 380)
 script = ExtResource("2_lnqyb")
 metadata/_edit_group_ = true
 
@@ -40,5 +40,8 @@ animation = &"navegar"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6, 4)
 shape = SubResource("RectangleShape2D_crol6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.968776, 0.921188)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

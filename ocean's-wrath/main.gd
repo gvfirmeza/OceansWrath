@@ -41,11 +41,7 @@ func _on_mob_timer_timeout():
 	mob.linear_velocity = velocity.rotated(direction)
 
 	add_child(mob)
-
-var red_octo = preload("res://mob.tscn")
-
-
-
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
