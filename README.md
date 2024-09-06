@@ -41,8 +41,11 @@ _Ocean's Wrath_ é um roguelite de sobrevivência ambientado em um mundo pós-ap
 **Miro:** 
 - https://miro.com/app/board/uXjVKmnkk5Y=/?share_link_id=723535353498
 
-**BeepBox:**
+**BeepBox (MUSIC):**
 - https://www.beepbox.co/
+
+**JSFXR (SFX):**
+- https://sfxr.me/
 
 **Colaboradores**
 - Gabriel Firmamento
