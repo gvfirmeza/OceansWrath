@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs7gf1f6erkfs"]
+
+[ext_resource type="Texture2D" uid="uid://cqp2qqivkttf6" path="res://assets/pedra_g.png" id="1_ij4ar"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h1g1y"]
+radius = 16.0
+height = 32.0
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="PedraG" type="Sprite2D" parent="."]
+texture = ExtResource("1_ij4ar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_h1g1y")
