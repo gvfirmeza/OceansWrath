@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://sb1h6a7g8god"]
+
+[ext_resource type="Script" path="res://barco_inimigo.gd" id="1_7moyk"]
+[ext_resource type="Texture2D" uid="uid://b0vbrk3r5g47f" path="res://assets/barco_inimigo.png" id="2_s5ajc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xeedb"]
+radius = 9.0
+height = 42.0
+
+[node name="barco_inimigo" type="CharacterBody2D"]
+script = ExtResource("1_7moyk")
+
+[node name="BarcoInimigo" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_s5ajc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_xeedb")

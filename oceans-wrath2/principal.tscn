@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bml6umtslqwfh"]
+[gd_scene load_steps=18 format=3 uid="uid://bml6umtslqwfh"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_2ruu0"]
 [ext_resource type="Script" path="res://principal.gd" id="1_um721"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bigcw4fexmfmp" path="res://assets/oceanswrathmenu.png" id="4_d1drf"]
 [ext_resource type="Script" path="res://menu_scene.gd" id="4_hod2m"]
 [ext_resource type="PackedScene" uid="uid://cs7gf1f6erkfs" path="res://rock_g.tscn" id="4_vc6wh"]
+[ext_resource type="PackedScene" uid="uid://sb1h6a7g8god" path="res://barco_inimigo.tscn" id="5_86rwd"]
 [ext_resource type="AudioStream" uid="uid://utx5rji40q4k" path="res://novaMusicaMenu.mp3" id="7_d1v5o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cadwf"]
@@ -81,20 +82,23 @@ position = Vector2(860, 159)
 [node name="StaticBody2D6" parent="GameScene" instance=ExtResource("4_vc6wh")]
 position = Vector2(984, 384)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="GameScene"]
+[node name="barco_inimigo" parent="GameScene" instance=ExtResource("5_86rwd")]
+position = Vector2(296, 165)
+
+[node name="Player" type="CharacterBody2D" parent="GameScene"]
 position = Vector2(561, 304)
 script = ExtResource("1_2ruu0")
 mouse_mov = true
 
-[node name="Sprite2D" type="Sprite2D" parent="GameScene/CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="GameScene/Player"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_oij0l")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameScene/CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameScene/Player"]
 position = Vector2(0.25, 0)
 shape = SubResource("RectangleShape2D_tjl7i")
 
-[node name="Camera2D" type="Camera2D" parent="GameScene/CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="GameScene/Player"]
 zoom = Vector2(2, 2)
 limit_left = -5000000
 limit_top = -5000000
