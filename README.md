@@ -48,8 +48,8 @@ _Ocean's Wrath_ é um roguelite de sobrevivência ambientado em um mundo pós-ap
 - https://sfxr.me/
 
 **Colaboradores**
-- Gabriel Firmamento
 - Guilherme Firmeza
-- Paulo Costa
 - Gustavo Raia
+- Paulo Costa
 - Guilherme Bastos
+- Gabriel Firmamento
