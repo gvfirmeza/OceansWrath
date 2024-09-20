@@ -1,6 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://bml6umtslqwfh"]
+[gd_scene load_steps=19 format=3 uid="uid://bml6umtslqwfh"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_2ruu0"]
+[ext_resource type="Script" path="res://player.gd" id="1_2ruu0"]
 [ext_resource type="Script" path="res://principal.gd" id="1_um721"]
 [ext_resource type="Texture2D" uid="uid://xhmei1lhrmgc" path="res://assets/player.png" id="2_oij0l"]
 [ext_resource type="Texture2D" uid="uid://cyq2jufuum4vi" path="res://assets/sand.png" id="2_vqdbq"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cs7gf1f6erkfs" path="res://rock_g.tscn" id="4_vc6wh"]
 [ext_resource type="PackedScene" uid="uid://sb1h6a7g8god" path="res://barco_inimigo.tscn" id="5_86rwd"]
 [ext_resource type="AudioStream" uid="uid://utx5rji40q4k" path="res://novaMusicaMenu.mp3" id="7_d1v5o"]
+[ext_resource type="PackedScene" uid="uid://b2lqtgq3f5pce" path="res://cannon.tscn" id="7_ns8g3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cadwf"]
 size = Vector2(1165, 20)
@@ -36,6 +37,7 @@ script = ExtResource("1_um721")
 [node name="GameScene" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="GameScene"]
+position = Vector2(11, 0)
 
 [node name="Sand" type="Sprite2D" parent="GameScene/StaticBody2D"]
 position = Vector2(573, 342)
@@ -43,7 +45,7 @@ scale = Vector2(25.5122, 6.34516)
 texture = ExtResource("2_vqdbq")
 
 [node name="Borders" type="Sprite2D" parent="GameScene/StaticBody2D"]
-position = Vector2(585, 328)
+position = Vector2(588, 328)
 texture = ExtResource("3_nxgjn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameScene/StaticBody2D"]
@@ -90,6 +92,9 @@ position = Vector2(561, 304)
 script = ExtResource("1_2ruu0")
 mouse_mov = true
 
+[node name="Cannon" parent="GameScene/Player" instance=ExtResource("7_ns8g3")]
+rotation = 1.5708
+
 [node name="Sprite2D" type="Sprite2D" parent="GameScene/Player"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_oij0l")
@@ -99,6 +104,8 @@ position = Vector2(0.25, 0)
 shape = SubResource("RectangleShape2D_tjl7i")
 
 [node name="Camera2D" type="Camera2D" parent="GameScene/Player"]
+position = Vector2(3, 0)
+enabled = false
 zoom = Vector2(2, 2)
 limit_left = -5000000
 limit_top = -5000000
@@ -106,7 +113,6 @@ limit_right = 5000000
 limit_bottom = 5000000
 
 [node name="MenuScene" type="Node2D" parent="."]
-visible = false
 script = ExtResource("4_hod2m")
 
 [node name="Sprite2D" type="Sprite2D" parent="MenuScene"]

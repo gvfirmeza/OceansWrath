@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5ghspsn7htkn"]
+
+[ext_resource type="Script" path="res://tiro.gd" id="1_lhdw5"]
+[ext_resource type="Texture2D" uid="uid://dt3p0lfjnira0" path="res://assets/bala.png" id="2_ryxmn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u7btf"]
+radius = 7.28011
+
+[node name="Tiro" type="Area2D"]
+top_level = true
+z_index = 4
+collision_mask = 2
+script = ExtResource("1_lhdw5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 2.81262
+shape = SubResource("CircleShape2D_u7btf")
+
+[node name="Bala" type="Sprite2D" parent="."]
+texture = ExtResource("2_ryxmn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

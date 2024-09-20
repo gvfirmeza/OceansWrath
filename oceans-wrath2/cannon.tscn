@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2lqtgq3f5pce"]
+
+[ext_resource type="Script" path="res://cannon.gd" id="1_a6t4t"]
+[ext_resource type="Texture2D" uid="uid://b17ydk2dyb27r" path="res://assets/icon.svg" id="1_ndkxk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rmv76"]
+radius = 198.003
+
+[node name="Cannon" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_a6t4t")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rmv76")
+
+[node name="WeaponPoint" type="Marker2D" parent="."]
+position = Vector2(-5, 0)
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(0.078125, 0.03125)
+texture = ExtResource("1_ndkxk")
+
+[node name="ShootingPoint" type="Marker2D" parent="Icon"]
+unique_name_in_owner = true
+position = Vector2(62.0605, -2.17982e-06)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
