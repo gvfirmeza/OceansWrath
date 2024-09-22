@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var vida = 3
+var vida = 2
 var player
 
 func _ready() -> void:

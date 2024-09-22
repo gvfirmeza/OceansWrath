@@ -6,12 +6,9 @@ func spawn_mob():
 	novo_inimigo.global_position = %PathFollow2D.global_position
 	add_child (novo_inimigo)
 
-
 func _on_timer_timeout():
 	spawn_mob()
-	
-
 
 func _on_player_health_depleted():
 	%GameOverScreen.visible = true
-	get_tree().paused = true
+	#get_tree().paused = true

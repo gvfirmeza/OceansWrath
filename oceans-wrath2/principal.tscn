@@ -20,8 +20,8 @@ size = Vector2(1165, 20)
 size = Vector2(20, 663)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7bsan"]
-radius = 11.0
-height = 60.5
+radius = 9.00003
+height = 52.5
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fxwyh"]
 radius = 11.0
@@ -61,6 +61,7 @@ bg_color = Color(0.207843, 0.12549, 0.054902, 0.25098)
 script = ExtResource("1_um721")
 
 [node name="GameScene" type="Node2D" parent="."]
+process_mode = 4
 script = ExtResource("2_p06av")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="GameScene"]
@@ -130,6 +131,7 @@ shape = SubResource("CapsuleShape2D_7bsan")
 
 [node name="Camera2D" type="Camera2D" parent="GameScene/Player"]
 position = Vector2(3, 0)
+enabled = false
 zoom = Vector2(2, 2)
 limit_left = -5000000
 limit_top = -5000000
@@ -178,7 +180,6 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("9_2tno7")
 
 [node name="MenuScene" type="Node2D" parent="."]
-visible = false
 script = ExtResource("4_hod2m")
 
 [node name="Sprite2D" type="Sprite2D" parent="MenuScene"]
