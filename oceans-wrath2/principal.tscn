@@ -1,16 +1,17 @@
-[gd_scene load_steps=19 format=3 uid="uid://bml6umtslqwfh"]
+[gd_scene load_steps=24 format=3 uid="uid://bml6umtslqwfh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_2ruu0"]
 [ext_resource type="Script" path="res://principal.gd" id="1_um721"]
 [ext_resource type="Texture2D" uid="uid://xhmei1lhrmgc" path="res://assets/player.png" id="2_oij0l"]
+[ext_resource type="Script" path="res://game_scene.gd" id="2_p06av"]
 [ext_resource type="Texture2D" uid="uid://cyq2jufuum4vi" path="res://assets/sand.png" id="2_vqdbq"]
 [ext_resource type="Texture2D" uid="uid://cqptcqcknigri" path="res://assets/borders.png" id="3_nxgjn"]
 [ext_resource type="Texture2D" uid="uid://bigcw4fexmfmp" path="res://assets/oceanswrathmenu.png" id="4_d1drf"]
 [ext_resource type="Script" path="res://menu_scene.gd" id="4_hod2m"]
 [ext_resource type="PackedScene" uid="uid://cs7gf1f6erkfs" path="res://rock_g.tscn" id="4_vc6wh"]
-[ext_resource type="PackedScene" uid="uid://sb1h6a7g8god" path="res://barco_inimigo.tscn" id="5_86rwd"]
 [ext_resource type="AudioStream" uid="uid://utx5rji40q4k" path="res://novaMusicaMenu.mp3" id="7_d1v5o"]
 [ext_resource type="PackedScene" uid="uid://b2lqtgq3f5pce" path="res://cannon.tscn" id="7_ns8g3"]
+[ext_resource type="Texture2D" uid="uid://ckpb85molbkfm" path="res://assets/TelaGameOver.jpeg" id="9_2tno7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cadwf"]
 size = Vector2(1165, 20)
@@ -18,8 +19,33 @@ size = Vector2(1165, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rf4dt"]
 size = Vector2(20, 663)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjl7i"]
-size = Vector2(60.5, 30)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7bsan"]
+radius = 11.0
+height = 60.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fxwyh"]
+radius = 11.0
+height = 60.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hs1kw"]
+bg_color = Color(0.153126, 0.19923, 0.250812, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt64i"]
+bg_color = Color(0.200994, 0.599182, 0.224014, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Curve2D" id="Curve2D_6i6hu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 80, 31, 0, 0, 0, 0, 1121, 25, 0, 0, 0, 0, 1124, 621, 0, 0, 0, 0, 79, 618, 0, 0, 0, 0, 80, 31)
+}
+point_count = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8np5"]
 bg_color = Color(0.207843, 0.12549, 0.054902, 0.25098)
@@ -35,6 +61,7 @@ bg_color = Color(0.207843, 0.12549, 0.054902, 0.25098)
 script = ExtResource("1_um721")
 
 [node name="GameScene" type="Node2D" parent="."]
+script = ExtResource("2_p06av")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="GameScene"]
 position = Vector2(11, 0)
@@ -84,9 +111,6 @@ position = Vector2(860, 159)
 [node name="StaticBody2D6" parent="GameScene" instance=ExtResource("4_vc6wh")]
 position = Vector2(984, 384)
 
-[node name="barco_inimigo" parent="GameScene" instance=ExtResource("5_86rwd")]
-position = Vector2(296, 165)
-
 [node name="Player" type="CharacterBody2D" parent="GameScene"]
 position = Vector2(561, 304)
 script = ExtResource("1_2ruu0")
@@ -101,18 +125,60 @@ texture = ExtResource("2_oij0l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameScene/Player"]
 position = Vector2(0.25, 0)
-shape = SubResource("RectangleShape2D_tjl7i")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7bsan")
 
 [node name="Camera2D" type="Camera2D" parent="GameScene/Player"]
 position = Vector2(3, 0)
-enabled = false
 zoom = Vector2(2, 2)
 limit_left = -5000000
 limit_top = -5000000
 limit_right = 5000000
 limit_bottom = 5000000
 
+[node name="HitBox" type="Area2D" parent="GameScene/Player"]
+unique_name_in_owner = true
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameScene/Player/HitBox"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fxwyh")
+debug_color = Color(0.850615, 0.167079, 0.811261, 0.42)
+
+[node name="ProgressBar" type="ProgressBar" parent="GameScene/Player"]
+unique_name_in_owner = true
+offset_left = -28.0
+offset_top = 22.0
+offset_right = 26.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_hs1kw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bt64i")
+value = 100.0
+
+[node name="Path2D" type="Path2D" parent="GameScene"]
+curve = SubResource("Curve2D_6i6hu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="GameScene/Path2D"]
+unique_name_in_owner = true
+position = Vector2(80, 31)
+rotation = -0.00576362
+
+[node name="Timer" type="Timer" parent="GameScene"]
+wait_time = 1.5
+autostart = true
+
+[node name="GameOverScreen" type="CanvasLayer" parent="GameScene"]
+unique_name_in_owner = true
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="GameScene/GameOverScreen"]
+position = Vector2(563, 305)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_2tno7")
+
 [node name="MenuScene" type="Node2D" parent="."]
+visible = false
 script = ExtResource("4_hod2m")
 
 [node name="Sprite2D" type="Sprite2D" parent="MenuScene"]
@@ -140,5 +206,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_2rkbs")
 stream = ExtResource("7_d1v5o")
 autoplay = true
 
+[connection signal="health_depleted" from="GameScene/Player" to="GameScene" method="_on_player_health_depleted"]
+[connection signal="timeout" from="GameScene/Timer" to="GameScene" method="_on_timer_timeout"]
 [connection signal="pressed" from="MenuScene/PlayButton" to="MenuScene" method="_on_play_button_pressed"]
 [connection signal="pressed" from="MenuScene/ExitButton" to="MenuScene" method="_on_exit_button_pressed"]
