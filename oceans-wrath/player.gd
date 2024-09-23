@@ -7,6 +7,7 @@ extends CharacterBody2D
 signal health_depleted
 var health = 100.0
 var rotation_direction = 0
+var is_dead = false
 
 func get_input():
 	if(mouse_mov):
@@ -26,5 +27,7 @@ func _physics_process(delta):
 	if overlapping_mobs.size() > 0:
 		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
 		%ProgressBar.value = health
-		if health <= 0.0:
-			health_depleted.emit()
+	if health <= 0.0 and not is_dead:
+		health_depleted.emit()
+		$AudioStreamPlayer2D.play()
+		is_dead = true
