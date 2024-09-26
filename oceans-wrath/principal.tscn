@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bml6umtslqwfh"]
+[gd_scene load_steps=26 format=3 uid="uid://bml6umtslqwfh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_2ruu0"]
 [ext_resource type="Script" path="res://principal.gd" id="1_um721"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b2lqtgq3f5pce" path="res://cannon.tscn" id="7_ns8g3"]
 [ext_resource type="Texture2D" uid="uid://ckpb85molbkfm" path="res://assets/TelaGameOver.jpeg" id="9_2tno7"]
 [ext_resource type="AudioStream" uid="uid://b1blre1elwbmf" path="res://death.wav" id="9_g1xcu"]
+[ext_resource type="AudioStream" uid="uid://ctvp08gtl6lxq" path="res://SomFeraOceano.mp3" id="11_rvtcs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cadwf"]
 size = Vector2(1165, 20)
@@ -172,8 +173,11 @@ unique_name_in_owner = true
 position = Vector2(80, 31)
 rotation = -0.00576362
 
-[node name="Timer" type="Timer" parent="GameScene"]
-wait_time = 1.5
+[node name="TimerBarco" type="Timer" parent="GameScene"]
+wait_time = 4.0
+autostart = true
+
+[node name="TimerAguaviva" type="Timer" parent="GameScene"]
 autostart = true
 
 [node name="GameOverScreen" type="CanvasLayer" parent="GameScene"]
@@ -184,6 +188,10 @@ visible = false
 position = Vector2(563, 305)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("9_2tno7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="GameScene"]
+stream = ExtResource("11_rvtcs")
+autoplay = true
 
 [node name="MenuScene" type="Node2D" parent="."]
 script = ExtResource("4_hod2m")
@@ -214,6 +222,7 @@ stream = ExtResource("7_d1v5o")
 autoplay = true
 
 [connection signal="health_depleted" from="GameScene/Player" to="GameScene" method="_on_player_health_depleted"]
-[connection signal="timeout" from="GameScene/Timer" to="GameScene" method="_on_timer_timeout"]
+[connection signal="timeout" from="GameScene/TimerBarco" to="GameScene" method="_on_timer_barco_timeout"]
+[connection signal="timeout" from="GameScene/TimerAguaviva" to="GameScene" method="_on_timer_aguaviva_timeout"]
 [connection signal="pressed" from="MenuScene/PlayButton" to="MenuScene" method="_on_play_button_pressed"]
 [connection signal="pressed" from="MenuScene/ExitButton" to="MenuScene" method="_on_exit_button_pressed"]

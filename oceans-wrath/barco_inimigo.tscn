@@ -9,6 +9,7 @@ height = 42.0
 
 [node name="barco_inimigo" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_7moyk")
 
 [node name="BarcoInimigo" type="Sprite2D" parent="."]
