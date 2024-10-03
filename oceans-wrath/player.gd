@@ -25,8 +25,11 @@ func _physics_process(delta):
 	const DAMAGE_RATE = 15.0
 	var overlapping_mobs = %HitBox.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
+		for i in overlapping_mobs:
+			print(i)
 		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
 		%ProgressBar.value = health
+		
 	if health <= 0.0 and not is_dead:
 		health_depleted.emit()
 		$AudioStreamPlayer2D.play()

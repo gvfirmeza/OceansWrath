@@ -12,6 +12,12 @@ func spawn_aguaviva():
 	novo_inimigo.global_position = %PathFollow2D.global_position
 	add_child (novo_inimigo)
 
+func spawn_barril():
+	var novo_inimigo = preload("res://barril_vida.tscn").instantiate()
+	%PathFollow2D.progress_ratio = randf()
+	novo_inimigo.global_position = %PathFollow2D.global_position
+	add_child (novo_inimigo)
+
 func _on_player_health_depleted():
 	%GameOverScreen.visible = true
 
@@ -20,3 +26,6 @@ func _on_timer_barco_timeout():
 
 func _on_timer_aguaviva_timeout():
 	spawn_aguaviva()
+
+func _on_timer_barril_vida_timeout() -> void:
+	spawn_barril()

@@ -177,7 +177,12 @@ rotation = -0.00576362
 wait_time = 4.0
 autostart = true
 
+[node name="TimerBarrilVida" type="Timer" parent="GameScene"]
+wait_time = 30.0
+autostart = true
+
 [node name="TimerAguaviva" type="Timer" parent="GameScene"]
+wait_time = 3.0
 autostart = true
 
 [node name="GameOverScreen" type="CanvasLayer" parent="GameScene"]
@@ -223,6 +228,7 @@ autoplay = true
 
 [connection signal="health_depleted" from="GameScene/Player" to="GameScene" method="_on_player_health_depleted"]
 [connection signal="timeout" from="GameScene/TimerBarco" to="GameScene" method="_on_timer_barco_timeout"]
+[connection signal="timeout" from="GameScene/TimerBarrilVida" to="GameScene" method="_on_timer_barril_vida_timeout"]
 [connection signal="timeout" from="GameScene/TimerAguaviva" to="GameScene" method="_on_timer_aguaviva_timeout"]
 [connection signal="pressed" from="MenuScene/PlayButton" to="MenuScene" method="_on_play_button_pressed"]
 [connection signal="pressed" from="MenuScene/ExitButton" to="MenuScene" method="_on_exit_button_pressed"]
