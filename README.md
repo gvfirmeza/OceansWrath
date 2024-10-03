@@ -1,5 +1,8 @@
 # Ocean's Wrath
 
+## Link do Jogo
+https://gvfirmeza.itch.io/oceans-wrath
+
 ## Descrição:
 _Ocean's Wrath_ é um roguelite de sobrevivência ambientado em um mundo pós-apocalíptico inundado. Como capitão de um navio personalizável, você enfrentará ondas crescentes de piratas, tubarões e criaturas míticas do oceano. Sua missão é sobreviver o máximo possível, resgatar tesouros escondidos e aprimorar seu navio com recursos coletados de inimigos derrotados.
 
