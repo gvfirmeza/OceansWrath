@@ -133,7 +133,6 @@ offset_top = 33.0
 offset_right = 25.0
 offset_bottom = 43.0
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_hs1kw")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bt64i")
 value = 100.0
@@ -181,7 +180,7 @@ wait_time = 4.0
 autostart = true
 
 [node name="TimerBarrilVida" type="Timer" parent="GameScene"]
-wait_time = 30.0
+wait_time = 3.0
 autostart = true
 
 [node name="TimerAguaviva" type="Timer" parent="GameScene"]

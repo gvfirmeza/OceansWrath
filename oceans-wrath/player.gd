@@ -9,6 +9,9 @@ var health = 100.0
 var rotation_direction = 0
 var is_dead = false
 
+func _process(delta: float) -> void:
+	%ProgressBar.value = health
+
 func get_input():
 	if(mouse_mov):
 		look_at(get_global_mouse_position())
