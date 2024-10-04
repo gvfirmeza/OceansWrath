@@ -1,14 +1,10 @@
 extends Node2D
 
+var has_barril = false
+
 func _input(event):
 	if event.is_action_pressed("menu"):
 		get_parent().mudar_cena(self, get_parent().get_node("PauseScene"))
-
-	#if event.is_action_pressed("menu"):
-		#if get_node(".").process_mode == Node.PROCESS_MODE_DISABLED:
-			#get_node(".").process_mode = Node.PROCESS_MODE_ALWAYS
-		#else:
-			#get_node(".").process_mode = Node.PROCESS_MODE_DISABLED
 
 func spawn_barco():
 	var novo_inimigo = preload("res://barco_inimigo.tscn").instantiate()
@@ -23,10 +19,12 @@ func spawn_aguaviva():
 	add_child (novo_inimigo)
 
 func spawn_barril():
-	var novo_inimigo = preload("res://barril_vida.tscn").instantiate()
-	%PathFollow2D.progress_ratio = randf()
-	novo_inimigo.global_position = %PathFollow2D.global_position
-	add_child (novo_inimigo)
+	if has_barril == false: 
+		var novo_inimigo = preload("res://barril_vida.tscn").instantiate()
+		%PathFollow2D.progress_ratio = randf()
+		novo_inimigo.global_position = %PathFollow2D.global_position
+		add_child (novo_inimigo)
+		has_barril = true;
 
 func _on_player_health_depleted():
 	%GameOverScreen.visible = true

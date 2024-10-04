@@ -27,11 +27,19 @@ func _physics_process(delta):
 	
 	const DAMAGE_RATE = 15.0
 	var overlapping_mobs = %HitBox.get_overlapping_bodies()
+	
 	if overlapping_mobs.size() > 0:
 		for i in overlapping_mobs:
-			print(i)
-		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
-		%ProgressBar.value = health
+			if i.name == "BarrilVida":
+				get_parent().has_barril = false
+				i.queue_free()
+				if health >= 85:
+					health = 100;
+				else:
+					health += 15;
+			else:
+				health -= DAMAGE_RATE * overlapping_mobs.size() * delta
+				%ProgressBar.value = health
 		
 	if health <= 0.0 and not is_dead:
 		health_depleted.emit()
