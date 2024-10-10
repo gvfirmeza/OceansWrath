@@ -14,8 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://ckpb85molbkfm" path="res://assets/TelaGameOver.jpeg" id="9_2tno7"]
 [ext_resource type="AudioStream" uid="uid://b1blre1elwbmf" path="res://death.wav" id="9_g1xcu"]
 [ext_resource type="AudioStream" uid="uid://ctvp08gtl6lxq" path="res://SomFeraOceano.mp3" id="11_rvtcs"]
-[ext_resource type="Texture2D" uid="uid://biaohja1t0r7k" path="res://assets/barril.png" id="15_b42o6"]
 [ext_resource type="Script" path="res://pause_scene.gd" id="15_dhl8i"]
+[ext_resource type="Texture2D" uid="uid://d1iadqq5pnsgr" path="res://assets/ocean_bg.png" id="16_ewplg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cadwf"]
 size = Vector2(1165, 20)
@@ -230,20 +230,43 @@ autoplay = true
 
 [node name="PauseScene" type="Node2D" parent="."]
 visible = false
+use_parent_material = true
 script = ExtResource("15_dhl8i")
 
-[node name="Barril" type="Sprite2D" parent="PauseScene"]
-position = Vector2(583, 324)
-scale = Vector2(42.98, 20.625)
-texture = ExtResource("15_b42o6")
+[node name="ButtonQuit" type="Button" parent="PauseScene"]
+z_index = 1
+offset_left = 506.0
+offset_top = 381.0
+offset_right = 659.0
+offset_bottom = 446.0
+theme_override_font_sizes/font_size = 26
+text = "Quit"
 
-[node name="Button" type="Button" parent="PauseScene"]
-offset_left = 413.0
-offset_top = 222.0
-offset_right = 764.0
-offset_bottom = 402.0
-theme_override_font_sizes/font_size = 69
-text = "VOLTA"
+[node name="ButtonResume" type="Button" parent="PauseScene"]
+z_index = 1
+offset_left = 506.0
+offset_top = 241.0
+offset_right = 659.0
+offset_bottom = 306.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+text = "Resume"
+
+[node name="ButtonMenu" type="Button" parent="PauseScene"]
+z_index = 1
+offset_left = 506.0
+offset_top = 311.0
+offset_right = 659.0
+offset_bottom = 376.0
+theme_override_font_sizes/font_size = 26
+text = "Menu"
+
+[node name="Sprite2D" type="Sprite2D" parent="PauseScene"]
+position = Vector2(1, 1)
+scale = Vector2(0.959167, 0.80875)
+texture = ExtResource("16_ewplg")
+centered = false
 
 [connection signal="health_depleted" from="GameScene/Player" to="GameScene" method="_on_player_health_depleted"]
 [connection signal="timeout" from="GameScene/TimerBarco" to="GameScene" method="_on_timer_barco_timeout"]
@@ -251,4 +274,6 @@ text = "VOLTA"
 [connection signal="timeout" from="GameScene/TimerAguaviva" to="GameScene" method="_on_timer_aguaviva_timeout"]
 [connection signal="pressed" from="MenuScene/PlayButton" to="MenuScene" method="_on_play_button_pressed"]
 [connection signal="pressed" from="MenuScene/ExitButton" to="MenuScene" method="_on_exit_button_pressed"]
-[connection signal="pressed" from="PauseScene/Button" to="PauseScene" method="_on_button_pressed"]
+[connection signal="pressed" from="PauseScene/ButtonQuit" to="PauseScene" method="_on_button_quit_pressed"]
+[connection signal="pressed" from="PauseScene/ButtonResume" to="PauseScene" method="_on_button_resume_pressed"]
+[connection signal="pressed" from="PauseScene/ButtonMenu" to="PauseScene" method="_on_button_menu_pressed"]

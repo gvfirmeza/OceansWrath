@@ -17,6 +17,11 @@ func mudar_cena(atual: Node2D, nova: Node2D):
 	if nova.name == "PauseScene":
 		get_node("./GameScene/Camera2D").enabled = false
 		get_node("GameScene").process_mode = Node.PROCESS_MODE_DISABLED
+		
+	if nova.name == "MenuScene":
+		get_node("GameScene").process_mode = Node.PROCESS_MODE_DISABLED
+		get_tree().reload_current_scene()
+		get_node("MenuScene").process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
