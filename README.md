@@ -18,6 +18,10 @@ _Ocean's Wrath_ é um roguelite de sobrevivência ambientado em um mundo pós-ap
 - **Recursos:** O jogador teria que controlar as moedas obtidas para fazer os upgrades nescessários que o ajudem a sobreviver por mais tempo.
 - **Objetivo:** Sobreviver certa quantidade de ondas de inimigos e derrotar um chefão final.
 
+## Novas Ideias: 
+- **Modo Infinito:** Criar um modo infinito que vai calcular pontos para os jogadores baseado na quantidade de inimigos que matou e o tempo que sobreviveu.
+- **Implementar Leaderboard:** Implementar um leaderboard que armazene o nickname e o resultado dos jogadores e mostre a posição de cada 1, utilizando firebase.
+
 ## Inspiração de Jogos:
 - **[Vampire Survivors:](https://store.steampowered.com/app/1794680/Vampire_Survivors/)** É um jogo casual de terror gótico com elementos roguelite onde suas escolhas podem fazer você crescer rapidamente e aniquilar os milhares de monstros que aparecem pelo caminho.
 - **[20 Minutes Till Dawn:](https://store.steampowered.com/app/1966900/20_Minutes_Till_Dawn/)** Dispare em uma horda ascendente de monstros baseados em Lovecraftian para sobreviver à noite. Faça escolhas dentre uma variedade de melhorias para criar combinações únicas e devastadoras.
