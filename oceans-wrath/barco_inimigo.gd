@@ -22,4 +22,4 @@ func indicador_dano():
 	get_node("BarcoInimigo").modulate = Color(0.7, 0.7, 0.7, 0.7)
 	var timer = get_tree().create_timer(0.1)
 	await timer.timeout
-	get_node("BarcoInimigo").modulate = Color(1, 1, 1, 1)
+	get_node("BarcoInimigo").modulate = Color(1, 1, 1, 0.678)
