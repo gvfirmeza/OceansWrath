@@ -9,6 +9,9 @@ var health = 100.0
 var rotation_direction = 0
 var is_dead = false
 
+func _ready():
+	$Sprite2D/AnimationPlayer.connect("animation_finished", Callable(self, "_on_animation_finished"))
+
 func _process(delta: float) -> void:
 	%ProgressBar.value = health
 
@@ -23,7 +26,9 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	rotation += rotation_direction * rotation_speed * delta
-	move_and_slide()
+	if health >= 0.0:
+		move_and_slide()
+		$Sprite2D/IdlePlayer.play("idle")
 	
 	const DAMAGE_RATE = 15.0
 	var overlapping_mobs = %HitBox.get_overlapping_bodies()
@@ -42,6 +47,12 @@ func _physics_process(delta):
 				%ProgressBar.value = health
 		
 	if health <= 0.0 and not is_dead:
-		health_depleted.emit()
+		$Sprite2D/IdlePlayer.stop(true)
+		$Sprite2D/AnimationPlayer.play("death")
 		$AudioStreamPlayer2D.play()
+		#health_depleted.emit()
 		is_dead = true
+
+func _on_animation_finished(anim_name):
+	if anim_name == "death":
+		health_depleted.emit()
