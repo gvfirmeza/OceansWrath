@@ -37,3 +37,9 @@ func _on_timer_aguaviva_timeout():
 
 func _on_timer_barril_vida_timeout() -> void:
 	spawn_barril()
+
+var c = 0
+func _on_timer_coin_timeout() -> void:
+	c += 1
+	%coins_counter.text = str(c)
+	Global.coins = c

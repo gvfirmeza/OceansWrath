@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bml6umtslqwfh"]
+[gd_scene load_steps=36 format=3 uid="uid://bml6umtslqwfh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_2ruu0"]
 [ext_resource type="Script" path="res://principal.gd" id="1_um721"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bigcw4fexmfmp" path="res://assets/oceanswrathmenu.png" id="4_d1drf"]
 [ext_resource type="Script" path="res://menu_scene.gd" id="4_hod2m"]
 [ext_resource type="PackedScene" uid="uid://cs7gf1f6erkfs" path="res://rock_g.tscn" id="4_vc6wh"]
+[ext_resource type="Texture2D" uid="uid://dt3p0lfjnira0" path="res://assets/bala.png" id="6_6o7g6"]
 [ext_resource type="AudioStream" uid="uid://utx5rji40q4k" path="res://novaMusicaMenu.mp3" id="7_d1v5o"]
 [ext_resource type="PackedScene" uid="uid://b2lqtgq3f5pce" path="res://cannon.tscn" id="7_ns8g3"]
 [ext_resource type="Texture2D" uid="uid://bpocxp4lj14bm" path="res://assets/barcoanimado-Sheet.png" id="8_pb2sw"]
@@ -151,6 +152,21 @@ _data = {
 "idle": SubResource("Animation_j8jvq")
 }
 
+[sub_resource type="Animation" id="Animation_q54bk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_b5rlj"]
 resource_name = "idle"
 loop_mode = 1
@@ -165,21 +181,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_q54bk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x0l1k"]
@@ -229,7 +230,7 @@ scale = Vector2(25.5122, 6.34516)
 texture = ExtResource("2_vqdbq")
 
 [node name="Borders" type="Sprite2D" parent="GameScene/StaticBody2D"]
-position = Vector2(588, 328)
+position = Vector2(593, 333)
 texture = ExtResource("3_nxgjn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameScene/StaticBody2D"]
@@ -288,6 +289,54 @@ theme_override_styles/background = SubResource("StyleBoxFlat_hs1kw")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bt64i")
 value = 100.0
 show_percentage = false
+
+[node name="Control" type="Control" parent="GameScene/Camera2D"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -275.0
+offset_top = -160.0
+offset_right = -218.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="container" type="TextEdit" parent="GameScene/Camera2D/Control"]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="coins_container" type="HBoxContainer" parent="GameScene/Camera2D/Control/container"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="coins_icon" type="TextureRect" parent="GameScene/Camera2D/Control/container/coins_container"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("6_6o7g6")
+
+[node name="coins_counter" type="Label" parent="GameScene/Camera2D/Control/container/coins_container"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
 
 [node name="Player" type="CharacterBody2D" parent="GameScene"]
 position = Vector2(561, 304)
@@ -362,6 +411,10 @@ texture = ExtResource("9_2tno7")
 stream = ExtResource("11_rvtcs")
 autoplay = true
 
+[node name="TimerCoin" type="Timer" parent="GameScene"]
+wait_time = 5.0
+autostart = true
+
 [node name="MenuScene" type="Node2D" parent="."]
 script = ExtResource("4_hod2m")
 
@@ -434,6 +487,7 @@ centered = false
 [connection signal="timeout" from="GameScene/TimerBarco" to="GameScene" method="_on_timer_barco_timeout"]
 [connection signal="timeout" from="GameScene/TimerBarrilVida" to="GameScene" method="_on_timer_barril_vida_timeout"]
 [connection signal="timeout" from="GameScene/TimerAguaviva" to="GameScene" method="_on_timer_aguaviva_timeout"]
+[connection signal="timeout" from="GameScene/TimerCoin" to="GameScene" method="_on_timer_coin_timeout"]
 [connection signal="pressed" from="MenuScene/PlayButton" to="MenuScene" method="_on_play_button_pressed"]
 [connection signal="pressed" from="MenuScene/ExitButton" to="MenuScene" method="_on_exit_button_pressed"]
 [connection signal="pressed" from="PauseScene/ButtonQuit" to="PauseScene" method="_on_button_quit_pressed"]
