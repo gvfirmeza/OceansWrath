@@ -2,9 +2,11 @@ extends CharacterBody2D
 
 var vida = 4
 var player
+var game
 
 func _ready() -> void:
 	player = get_node("/root/Principal/GameScene/Player")
+	game = get_node("/root/Principal/GameScene")
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
@@ -17,6 +19,7 @@ func levar_dano():
 	vida -= 1
 	if vida <= 0:
 		queue_free()
+		game.c += 200
 
 func indicador_dano():
 	get_node("BarcoInimigo").modulate = Color(0.7, 0.7, 0.7, 0.7)

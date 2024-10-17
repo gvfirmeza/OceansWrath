@@ -40,6 +40,6 @@ func _on_timer_barril_vida_timeout() -> void:
 
 var c = 0
 func _on_timer_coin_timeout() -> void:
-	c += 1
+	c += 10
 	%coins_counter.text = str(c)
 	Global.coins = c

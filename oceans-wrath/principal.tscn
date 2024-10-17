@@ -398,6 +398,10 @@ autostart = true
 wait_time = 3.0
 autostart = true
 
+[node name="TimerCoin" type="Timer" parent="GameScene"]
+wait_time = 0.5
+autostart = true
+
 [node name="GameOverScreen" type="CanvasLayer" parent="GameScene"]
 unique_name_in_owner = true
 visible = false
@@ -410,10 +414,6 @@ texture = ExtResource("9_2tno7")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="GameScene"]
 stream = ExtResource("11_rvtcs")
 autoplay = true
-
-[node name="TimerCoin" type="Timer" parent="GameScene"]
-wait_time = 5.0
-autostart = true
 
 [node name="MenuScene" type="Node2D" parent="."]
 script = ExtResource("4_hod2m")
