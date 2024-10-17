@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://sb1h6a7g8god"]
+[gd_scene load_steps=5 format=3 uid="uid://sb1h6a7g8god"]
 
 [ext_resource type="Script" path="res://barco_inimigo.gd" id="1_7moyk"]
 [ext_resource type="Texture2D" uid="uid://b0vbrk3r5g47f" path="res://assets/barco_inimigo.png" id="2_s5ajc"]
@@ -7,6 +7,10 @@
 radius = 9.0
 height = 42.0
 
+[sub_resource type="Environment" id="Environment_486go"]
+background_mode = 3
+glow_enabled = true
+
 [node name="barco_inimigo" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 3
@@ -14,10 +18,20 @@ script = ExtResource("1_7moyk")
 
 [node name="BarcoInimigo" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.678431)
+self_modulate = Color(6.429, 32.857, 10, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_s5ajc")
+
+[node name="BarcoInimigo2" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.879)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_s5ajc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xeedb")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_486go")
