@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bigcw4fexmfmp" path="res://assets/oceanswrathmenu.png" id="4_d1drf"]
 [ext_resource type="Script" path="res://menu_scene.gd" id="4_hod2m"]
 [ext_resource type="PackedScene" uid="uid://cs7gf1f6erkfs" path="res://rock_g.tscn" id="4_vc6wh"]
-[ext_resource type="Texture2D" uid="uid://dt3p0lfjnira0" path="res://assets/bala.png" id="6_6o7g6"]
+[ext_resource type="Texture2D" uid="uid://wfkkwdy76mqh" path="res://assets/timao.png" id="6_54w62"]
 [ext_resource type="AudioStream" uid="uid://utx5rji40q4k" path="res://novaMusicaMenu.mp3" id="7_d1v5o"]
 [ext_resource type="PackedScene" uid="uid://b2lqtgq3f5pce" path="res://cannon.tscn" id="7_ns8g3"]
 [ext_resource type="Texture2D" uid="uid://bpocxp4lj14bm" path="res://assets/barcoanimado-Sheet.png" id="8_pb2sw"]
@@ -330,7 +330,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
-texture = ExtResource("6_6o7g6")
+texture = ExtResource("6_54w62")
 
 [node name="coins_counter" type="Label" parent="GameScene/Camera2D/Control/container/coins_container"]
 unique_name_in_owner = true
