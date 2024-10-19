@@ -1,7 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4bue2c18vwhs"]
+[gd_scene load_steps=7 format=3 uid="uid://b4bue2c18vwhs"]
 
-[ext_resource type="Texture2D" uid="uid://bsfcre8isx3nb" path="res://assets/aguaviva.png" id="1_65qao"]
 [ext_resource type="Script" path="res://agua_viva.gd" id="1_mm6of"]
+[ext_resource type="Texture2D" uid="uid://0fy0ubs0oue2" path="res://assets/aguavivaSheet.png" id="2_1vluk"]
+
+[sub_resource type="Animation" id="Animation_e4dtw"]
+resource_name = "agua_viva_idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.233333, 0.466667, 0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 0]
+}
+
+[sub_resource type="Animation" id="Animation_4bni8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kmj6c"]
+_data = {
+"RESET": SubResource("Animation_4bni8"),
+"agua_viva_idle": SubResource("Animation_e4dtw")
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ajqt"]
 
@@ -12,7 +49,13 @@ script = ExtResource("1_mm6of")
 
 [node name="Aguaviva" type="Sprite2D" parent="."]
 rotation = 1.5708
-texture = ExtResource("1_65qao")
+texture = ExtResource("2_1vluk")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Aguaviva"]
+libraries = {
+"": SubResource("AnimationLibrary_kmj6c")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

@@ -7,6 +7,7 @@ var game
 func _ready() -> void:
 	player = get_node("/root/Principal/GameScene/Player")
 	game = get_node("/root/Principal/GameScene")
+	$Aguaviva/AnimationPlayer.play("agua_viva_idle")
 
 func _physics_process(delta):
 	var direction = global_position.direction_to(player.global_position)
