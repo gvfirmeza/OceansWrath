@@ -7,9 +7,13 @@
 radius = 9.0
 height = 42.0
 
-[sub_resource type="Environment" id="Environment_486go"]
+[sub_resource type="Environment" id="Environment_63tk3"]
 background_mode = 3
 glow_enabled = true
+glow_hdr_threshold = 4.0
+glow_hdr_scale = 4.0
+glow_hdr_luminance_cap = 6.61
+adjustment_enabled = true
 
 [node name="barco_inimigo" type="CharacterBody2D"]
 collision_layer = 2
@@ -17,12 +21,12 @@ collision_mask = 3
 script = ExtResource("1_7moyk")
 
 [node name="BarcoInimigo" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.678431)
-self_modulate = Color(6.429, 32.857, 10, 1)
+self_modulate = Color(1, 2.703, 1, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_s5ajc")
 
 [node name="BarcoInimigo2" type="Sprite2D" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0.924)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_s5ajc")
@@ -34,4 +38,4 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_xeedb")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_486go")
+environment = SubResource("Environment_63tk3")
