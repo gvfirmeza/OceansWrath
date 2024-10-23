@@ -434,6 +434,14 @@ offset_bottom = 380.0
 theme_override_styles/hover = SubResource("StyleBoxFlat_s8np5")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6vur7")
 
+[node name="Teste" type="Button" parent="MenuScene"]
+offset_left = 477.0
+offset_top = 417.0
+offset_right = 682.0
+offset_bottom = 497.0
+theme_override_styles/hover = SubResource("StyleBoxFlat_s8np5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6vur7")
+
 [node name="ExitButton" type="Button" parent="MenuScene"]
 offset_left = 1066.0
 offset_top = 581.0
@@ -492,6 +500,7 @@ centered = false
 [connection signal="timeout" from="GameScene/TimerAguaviva" to="GameScene" method="_on_timer_aguaviva_timeout"]
 [connection signal="timeout" from="GameScene/TimerCoin" to="GameScene" method="_on_timer_coin_timeout"]
 [connection signal="pressed" from="MenuScene/PlayButton" to="MenuScene" method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuScene/Teste" to="MenuScene" method="_on_teste_pressed"]
 [connection signal="pressed" from="MenuScene/ExitButton" to="MenuScene" method="_on_exit_button_pressed"]
 [connection signal="pressed" from="PauseScene/ButtonQuit" to="PauseScene" method="_on_button_quit_pressed"]
 [connection signal="pressed" from="PauseScene/ButtonResume" to="PauseScene" method="_on_button_resume_pressed"]
