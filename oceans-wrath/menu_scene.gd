@@ -24,7 +24,7 @@ func _on_teste_pressed() -> void:
 	%ItemList.visible = true
 	var sw_scores: Dictionary = await SilentWolf.Scores.get_scores().sw_get_scores_complete
 	print(str(sw_scores.scores))
-	var lista = sw_scores.size() + 1
+	var lista = sw_scores.scores.size()
 	
 	while i < lista:
 		label_points.text += str(i + 1,"º", " " , sw_scores.scores[i].player_name, " " ,sw_scores.scores[i].score, "\n")
