@@ -1,7 +1,6 @@
 extends Node
 
 var coins := 0
-var old_coins := 0
 
 func _ready() -> void:
 	SilentWolf.configure({

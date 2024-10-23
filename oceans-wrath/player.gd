@@ -56,3 +56,4 @@ func _physics_process(delta):
 func _on_animation_finished(anim_name):
 	if anim_name == "death":
 		health_depleted.emit()
+		%TimerCoin.stop()
