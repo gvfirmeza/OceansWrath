@@ -4,6 +4,8 @@ extends Node2D
 @onready var camera = $GameScene/Camera2D
 @onready var target = get_node("./GameScene/Player")
 
+var clicado = false;
+
 func _process(delta):
 	camera.position = target.position
 
@@ -14,6 +16,7 @@ func mudar_cena(atual: Node2D, nova: Node2D):
 	if nova.name == "GameScene":
 		nova.get_node("./Camera2D").enabled = true
 		get_node("GameScene").process_mode = Node.PROCESS_MODE_ALWAYS
+		clicado = false;
 	
 	if nova.name == "PauseScene":
 		get_node("./GameScene/Camera2D").enabled = false
@@ -26,7 +29,8 @@ func mudar_cena(atual: Node2D, nova: Node2D):
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
-		if %GameOverScreen.visible == true:
+		if %GameOverScreen.visible == true && clicado == false:
+			clicado = true;
 			var current_scene = get_tree().current_scene
 			var sw_result: Dictionary = await SilentWolf.Scores.save_score(player_name.player_name, Global.coins).sw_save_score_complete
 			print("Score persisted successfully: " + str(sw_result.score_id))
