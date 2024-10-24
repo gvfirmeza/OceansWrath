@@ -1,11 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://bml6umtslqwfh"]
+[gd_scene load_steps=36 format=3 uid="uid://bml6umtslqwfh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_2ruu0"]
 [ext_resource type="Script" path="res://principal.gd" id="1_um721"]
 [ext_resource type="Script" path="res://game_scene.gd" id="2_p06av"]
 [ext_resource type="Texture2D" uid="uid://cyq2jufuum4vi" path="res://assets/sand.png" id="2_vqdbq"]
 [ext_resource type="Texture2D" uid="uid://cqptcqcknigri" path="res://assets/borders.png" id="3_nxgjn"]
-[ext_resource type="Texture2D" uid="uid://bigcw4fexmfmp" path="res://assets/oceanswrathmenu.png" id="4_d1drf"]
 [ext_resource type="Script" path="res://menu_scene.gd" id="4_hod2m"]
 [ext_resource type="PackedScene" uid="uid://cs7gf1f6erkfs" path="res://rock_g.tscn" id="4_vc6wh"]
 [ext_resource type="Texture2D" uid="uid://wfkkwdy76mqh" path="res://assets/timao.png" id="6_54w62"]
@@ -15,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ckpb85molbkfm" path="res://assets/TelaGameOver.jpeg" id="9_2tno7"]
 [ext_resource type="AudioStream" uid="uid://b1blre1elwbmf" path="res://death.wav" id="9_g1xcu"]
 [ext_resource type="AudioStream" uid="uid://ctvp08gtl6lxq" path="res://SomFeraOceano.mp3" id="11_rvtcs"]
+[ext_resource type="Texture2D" uid="uid://ddfa14y6yvcc1" path="res://assets/oceanswrathmenu2.png" id="14_sqd3d"]
 [ext_resource type="Script" path="res://pause_scene.gd" id="15_dhl8i"]
 [ext_resource type="Texture2D" uid="uid://d1iadqq5pnsgr" path="res://assets/ocean_bg.png" id="16_ewplg"]
 
@@ -207,15 +207,6 @@ point_count = 5
 bg_color = Color(0.207843, 0.12549, 0.054902, 0.25098)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6vur7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h715p"]
-bg_color = Color(0.207843, 0.12549, 0.054902, 0.25098)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2rkbs"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pup7j"]
-bg_color = Color(0.392157, 0.290196, 0.239216, 1)
-corner_radius_top_right = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_diu4s"]
 bg_color = Color(0.081, 0.081, 0.081, 0.859)
@@ -433,9 +424,9 @@ autoplay = true
 script = ExtResource("4_hod2m")
 
 [node name="Sprite2D" type="Sprite2D" parent="MenuScene"]
-position = Vector2(576.353, 324)
-scale = Vector2(0.431681, 0.430667)
-texture = ExtResource("4_d1drf")
+position = Vector2(576.353, 329.485)
+scale = Vector2(0.431681, 0.437847)
+texture = ExtResource("14_sqd3d")
 
 [node name="PlayButton" type="Button" parent="MenuScene"]
 offset_left = 474.0
@@ -458,19 +449,16 @@ offset_left = 1066.0
 offset_top = 581.0
 offset_right = 1123.0
 offset_bottom = 627.0
-theme_override_styles/hover = SubResource("StyleBoxFlat_h715p")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_2rkbs")
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 23
+text = "X"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MenuScene"]
 stream = ExtResource("7_d1v5o")
 autoplay = true
-
-[node name="Panel" type="Panel" parent="MenuScene"]
-offset_left = -4.0
-offset_top = 565.0
-offset_right = 156.0
-offset_bottom = 650.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_pup7j")
 
 [node name="InputNomePlayer" type="LineEdit" parent="MenuScene"]
 anchors_preset = 7
@@ -478,26 +466,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 12.0
-offset_top = 609.0
-offset_right = 140.0
-offset_bottom = 640.0
+offset_left = 38.0
+offset_top = 588.0
+offset_right = 236.0
+offset_bottom = 619.0
 grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 max_length = 8
-
-[node name="Label" type="Label" parent="MenuScene"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 13.5
-offset_top = 577.0
-offset_right = 138.5
-offset_bottom = 600.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Type Your Vulgo"
 
 [node name="ItemList" type="ItemList" parent="MenuScene"]
 unique_name_in_owner = true

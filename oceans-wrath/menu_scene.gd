@@ -2,14 +2,12 @@ extends Node2D
 
 var player_name = "Guest"
 @onready var line_edit: LineEdit = $InputNomePlayer
-@onready var label_name: Label = $LabelNomePlayer
 @onready var label_points: Label = $ItemList/LabelPoints
 
 func _ready():
 	line_edit.text_changed.connect(_on_LineEdit_text_changed)
 
 func _on_LineEdit_text_changed(new_text: String) -> void:
-	#label_name.text = "Your name is: " + new_text
 	player_name = new_text
 
 func _on_play_button_pressed() -> void:
