@@ -484,7 +484,8 @@ offset_right = 140.0
 offset_bottom = 640.0
 grow_horizontal = 2
 grow_vertical = 0
-max_length = 6
+alignment = 1
+max_length = 8
 
 [node name="Label" type="Label" parent="MenuScene"]
 anchors_preset = 5
@@ -497,12 +498,6 @@ offset_bottom = 600.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Type Your Vulgo"
-
-[node name="LabelNomePlayer" type="Label" parent="MenuScene"]
-offset_left = 166.0
-offset_top = 598.0
-offset_right = 245.0
-offset_bottom = 626.0
 
 [node name="ItemList" type="ItemList" parent="MenuScene"]
 unique_name_in_owner = true
