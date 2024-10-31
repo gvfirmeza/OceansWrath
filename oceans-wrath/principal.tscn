@@ -231,7 +231,7 @@ scale = Vector2(25.5122, 6.34516)
 texture = ExtResource("2_vqdbq")
 
 [node name="Borders" type="Sprite2D" parent="GameScene/StaticBody2D"]
-position = Vector2(593, 333)
+position = Vector2(593, 355.6)
 texture = ExtResource("3_nxgjn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameScene/StaticBody2D"]
@@ -445,6 +445,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_s8np5")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6vur7")
 
 [node name="ExitButton" type="Button" parent="MenuScene"]
+visible = false
 offset_left = 1066.0
 offset_top = 581.0
 offset_right = 1123.0
@@ -554,6 +555,7 @@ use_parent_material = true
 script = ExtResource("15_dhl8i")
 
 [node name="ButtonQuit" type="Button" parent="PauseScene"]
+visible = false
 z_index = 1
 offset_left = 506.0
 offset_top = 381.0
@@ -564,10 +566,10 @@ text = "Quit"
 
 [node name="ButtonResume" type="Button" parent="PauseScene"]
 z_index = 1
-offset_left = 506.0
-offset_top = 241.0
-offset_right = 659.0
-offset_bottom = 306.0
+offset_left = 496.0
+offset_top = 256.0
+offset_right = 649.0
+offset_bottom = 321.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 26
@@ -575,10 +577,10 @@ text = "Resume"
 
 [node name="ButtonMenu" type="Button" parent="PauseScene"]
 z_index = 1
-offset_left = 506.0
-offset_top = 311.0
-offset_right = 659.0
-offset_bottom = 376.0
+offset_left = 496.0
+offset_top = 326.0
+offset_right = 649.0
+offset_bottom = 391.0
 theme_override_font_sizes/font_size = 26
 text = "Menu"
 

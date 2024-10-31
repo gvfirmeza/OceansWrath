@@ -31,9 +31,13 @@ func _on_player_health_depleted():
 
 func _on_timer_barco_timeout():
 	spawn_barco()
+	$TimerBarco.wait_time = $TimerBarco.wait_time - 0.1
+	print($TimerBarco.wait_time)
 
 func _on_timer_aguaviva_timeout():
 	spawn_aguaviva()
+	$TimerAguaviva.wait_time = $TimerAguaviva.wait_time - 0.2
+	print($TimerAguaviva.wait_time)
 
 func _on_timer_barril_vida_timeout() -> void:
 	spawn_barril()
