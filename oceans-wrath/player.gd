@@ -9,6 +9,11 @@ var health = 100.0
 var rotation_direction = 0
 var is_dead = false
 
+func adicionar_canhao():
+	var conhao = preload("res://cannon.tscn")
+	var novo_conhao = conhao.instantiate()
+	add_child(novo_conhao)
+
 func _ready():
 	$Sprite2D/AnimationPlayer.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
@@ -42,6 +47,10 @@ func _physics_process(delta):
 					health = 100;
 				else:
 					health += 15;
+			if i.name == "EvolucaoArma":
+				get_parent().has_evolucaoArma = false
+				adicionar_canhao()
+				i.queue_free()
 			else:
 				health -= DAMAGE_RATE * overlapping_mobs.size() * delta
 				%ProgressBar.value = health

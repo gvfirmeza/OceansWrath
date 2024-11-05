@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dji4x5oj7vfll"]
+
+[ext_resource type="Texture2D" uid="uid://ccjf5skxa6qpi" path="res://assets/balamais.png" id="1_v6mjd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0vihg"]
+radius = 8.06226
+
+[node name="EvolucaoArma" type="CharacterBody2D"]
+position = Vector2(84, 43)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_v6mjd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0vihg")

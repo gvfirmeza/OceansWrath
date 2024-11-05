@@ -1,6 +1,7 @@
 extends Node2D
 
 var has_barril = false
+var has_evolucaoArma = false
 
 func _input(event):
 	if event.is_action_pressed("menu"):
@@ -21,26 +22,37 @@ func spawn_aguaviva():
 func spawn_barril():
 	if has_barril == false: 
 		var novo_inimigo = preload("res://barril_vida.tscn").instantiate()
-		%PathFollow2D.progress_ratio = randf()
-		novo_inimigo.global_position = %PathFollow2D.global_position
+		%PathEvolucaoArma2D.progress_ratio = randf()
+		novo_inimigo.global_position = %PathEvolucaoArma2D.global_position
 		add_child (novo_inimigo)
 		has_barril = true;
+
+func spawn_evolucaoArma():
+	if has_evolucaoArma == false:
+		var novo_inimigo = preload("res://evolucao_arma.tscn").instantiate()
+		%PathEvolucaoArma2D.progress_ratio = randf()
+		novo_inimigo.global_position = %PathEvolucaoArma2D.global_position
+		add_child (novo_inimigo)
+		has_evolucaoArma = true;
 
 func _on_player_health_depleted():
 	%GameOverScreen.visible = true
 
 func _on_timer_barco_timeout():
 	spawn_barco()
-	$TimerBarco.wait_time = $TimerBarco.wait_time - 0.1
+	$TimerBarco.wait_time = $TimerBarco.wait_time - 0.05
 	print($TimerBarco.wait_time)
 
 func _on_timer_aguaviva_timeout():
 	spawn_aguaviva()
-	$TimerAguaviva.wait_time = $TimerAguaviva.wait_time - 0.2
+	$TimerAguaviva.wait_time = $TimerAguaviva.wait_time - 0.1
 	print($TimerAguaviva.wait_time)
 
 func _on_timer_barril_vida_timeout() -> void:
 	spawn_barril()
+
+func _on_timer_evolucao_arma_timeout() -> void:
+	spawn_evolucaoArma()
 
 var c = 0
 func _on_timer_coin_timeout() -> void:

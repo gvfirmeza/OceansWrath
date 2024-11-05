@@ -199,9 +199,9 @@ height = 60.0
 
 [sub_resource type="Curve2D" id="Curve2D_6i6hu"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 80, 31, 0, 0, 0, 0, 1121, 25, 0, 0, 0, 0, 1124, 621, 0, 0, 0, 0, 79, 618, 0, 0, 0, 0, 80, 31)
+"points": PackedVector2Array(0, 0, 0, 0, 597, 418, 0, 0, 0, 0, 1009, 106, 0, 0, 0, 0, 1105, 85, 0, 0, 0, 0, 1124, 621, 0, 0, 0, 0, 929, 487, 0, 0, 0, 0, 651, 585, 0, 0, 0, 0, 257, 572, 0, 0, 0, 0, 351, 472, 0, 0, 0, 0, 162, 374, 0, 0, 0, 0, 86, 66, 0, 0, 0, 0, 652, 224)
 }
-point_count = 5
+point_count = 11
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8np5"]
 bg_color = Color(0.207843, 0.12549, 0.054902, 0.25098)
@@ -387,8 +387,16 @@ curve = SubResource("Curve2D_6i6hu")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="GameScene/Path2D"]
 unique_name_in_owner = true
-position = Vector2(80, 31)
-rotation = -0.00576362
+position = Vector2(597, 418)
+rotation = -0.648145
+
+[node name="PathEvolucaoArma" type="Path2D" parent="GameScene"]
+curve = SubResource("Curve2D_6i6hu")
+
+[node name="PathEvolucaoArma2D" type="PathFollow2D" parent="GameScene/PathEvolucaoArma"]
+unique_name_in_owner = true
+position = Vector2(597, 418)
+rotation = -0.648145
 
 [node name="TimerBarco" type="Timer" parent="GameScene"]
 wait_time = 4.0
@@ -405,6 +413,10 @@ autostart = true
 [node name="TimerCoin" type="Timer" parent="GameScene"]
 unique_name_in_owner = true
 wait_time = 0.5
+autostart = true
+
+[node name="TimerEvolucaoArma" type="Timer" parent="GameScene"]
+wait_time = 3.0
 autostart = true
 
 [node name="GameOverScreen" type="CanvasLayer" parent="GameScene"]
@@ -595,6 +607,7 @@ centered = false
 [connection signal="timeout" from="GameScene/TimerBarrilVida" to="GameScene" method="_on_timer_barril_vida_timeout"]
 [connection signal="timeout" from="GameScene/TimerAguaviva" to="GameScene" method="_on_timer_aguaviva_timeout"]
 [connection signal="timeout" from="GameScene/TimerCoin" to="GameScene" method="_on_timer_coin_timeout"]
+[connection signal="timeout" from="GameScene/TimerEvolucaoArma" to="GameScene" method="_on_timer_evolucao_arma_timeout"]
 [connection signal="pressed" from="MenuScene/PlayButton" to="MenuScene" method="_on_play_button_pressed"]
 [connection signal="pressed" from="MenuScene/Teste" to="MenuScene" method="_on_teste_pressed"]
 [connection signal="pressed" from="MenuScene/ExitButton" to="MenuScene" method="_on_exit_button_pressed"]
