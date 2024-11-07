@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var mouse_mov = false
 
 signal health_depleted
+signal add_arma
 var health = 100.0
 var rotation_direction = 0
 var is_dead = false
@@ -50,6 +51,7 @@ func _physics_process(delta):
 			if i.name == "EvolucaoArma":
 				get_parent().has_evolucaoArma = false
 				adicionar_canhao()
+				add_arma.emit()
 				i.queue_free()
 			else:
 				health -= DAMAGE_RATE * overlapping_mobs.size() * delta
@@ -59,7 +61,6 @@ func _physics_process(delta):
 		$Sprite2D/IdlePlayer.stop(true)
 		$Sprite2D/AnimationPlayer.play("death")
 		$AudioStreamPlayer2D.play()
-		#health_depleted.emit()
 		is_dead = true
 
 func _on_animation_finished(anim_name):

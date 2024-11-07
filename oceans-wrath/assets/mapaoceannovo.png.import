@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1iadqq5pnsgr"
-path="res://.godot/imported/ocean_bg.png-43692f53957f5bce6217da82e77decca.ctex"
+uid="uid://b42fht8sr5mkv"
+path="res://.godot/imported/mapaoceannovo.png-4e147a2044c8b798105951ec555b25e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ocean_bg.png"
-dest_files=["res://.godot/imported/ocean_bg.png-43692f53957f5bce6217da82e77decca.ctex"]
+source_file="res://assets/mapaoceannovo.png"
+dest_files=["res://.godot/imported/mapaoceannovo.png-4e147a2044c8b798105951ec555b25e9.ctex"]
 
 [params]
 

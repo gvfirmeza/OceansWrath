@@ -2,6 +2,7 @@ extends Node2D
 
 var has_barril = false
 var has_evolucaoArma = false
+var armas = 0
 
 func _input(event):
 	if event.is_action_pressed("menu"):
@@ -40,19 +41,28 @@ func _on_player_health_depleted():
 
 func _on_timer_barco_timeout():
 	spawn_barco()
-	$TimerBarco.wait_time = $TimerBarco.wait_time - 0.05
-	print($TimerBarco.wait_time)
+
 
 func _on_timer_aguaviva_timeout():
 	spawn_aguaviva()
-	$TimerAguaviva.wait_time = $TimerAguaviva.wait_time - 0.1
-	print($TimerAguaviva.wait_time)
 
 func _on_timer_barril_vida_timeout() -> void:
 	spawn_barril()
 
 func _on_timer_evolucao_arma_timeout() -> void:
-	spawn_evolucaoArma()
+	if armas < 10:
+		spawn_evolucaoArma()
+
+func _on_player_add_arma() -> void:
+	armas = armas + 1
+	print(armas)
+
+func _on_timer_decreaser_timer_timeout() -> void:
+	if $TimerAguaviva.wait_time > 0.3:
+		$TimerAguaviva.wait_time = $TimerAguaviva.wait_time - 0.1
+		print($TimerAguaviva.wait_time)
+	if $TimerBarco.wait_time > 0.4:
+		$TimerBarco.wait_time = $TimerBarco.wait_time - 0.05
 
 var c = 0
 func _on_timer_coin_timeout() -> void:
