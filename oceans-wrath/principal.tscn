@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bml6umtslqwfh"]
+[gd_scene load_steps=40 format=3 uid="uid://bml6umtslqwfh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_2ruu0"]
 [ext_resource type="Script" path="res://principal.gd" id="1_um721"]
@@ -14,7 +14,10 @@
 [ext_resource type="AudioStream" uid="uid://ctvp08gtl6lxq" path="res://SomFeraOceano.mp3" id="11_rvtcs"]
 [ext_resource type="Texture2D" uid="uid://ddfa14y6yvcc1" path="res://assets/oceanswrathmenu2.png" id="14_sqd3d"]
 [ext_resource type="Script" path="res://pause_scene.gd" id="15_dhl8i"]
+[ext_resource type="Texture2D" uid="uid://enb3uiubojmn" path="res://assets/mouse_png.png" id="15_ppcuy"]
 [ext_resource type="Texture2D" uid="uid://b42fht8sr5mkv" path="res://assets/mapaoceannovo.png" id="15_ybo6d"]
+[ext_resource type="Texture2D" uid="uid://biaohja1t0r7k" path="res://assets/barril.png" id="17_qbbde"]
+[ext_resource type="Texture2D" uid="uid://ccjf5skxa6qpi" path="res://assets/balamais.png" id="18_f5fed"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejeh2"]
 bg_color = Color(1, 0.831373, 0.639216, 1)
@@ -617,6 +620,109 @@ text = "Position        Name               Score"
 vertical_alignment = 1
 justification_flags = 131
 
+[node name="ButtonHelpMenu" type="Button" parent="MenuScene"]
+offset_left = 1101.0
+offset_top = 7.0
+offset_right = 1138.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 20
+text = "?"
+
+[node name="ListHelpMenu" type="ItemList" parent="MenuScene"]
+unique_name_in_owner = true
+visible = false
+offset_left = 915.0
+offset_top = 54.0
+offset_right = 1139.0
+offset_bottom = 257.0
+
+[node name="Control" type="Control" parent="MenuScene/ListHelpMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -113.0
+offset_top = 1.0
+offset_right = 111.0
+offset_bottom = 205.0
+grow_horizontal = 2
+
+[node name="HBoxContainerMoveBarco" type="HBoxContainer" parent="MenuScene/ListHelpMenu/Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 11.0
+offset_right = 211.0
+offset_bottom = 46.0
+
+[node name="Label2" type="Label" parent="MenuScene/ListHelpMenu/Control/HBoxContainerMoveBarco"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.379499, 0.477891, 0.326782, 1)
+theme_override_font_sizes/font_size = 25
+text = "W"
+
+[node name="Label" type="Label" parent="MenuScene/ListHelpMenu/Control/HBoxContainerMoveBarco"]
+layout_mode = 2
+text = "    Movimenta o barco"
+
+[node name="HBoxContainerDirecionaBarco" type="HBoxContainer" parent="MenuScene/ListHelpMenu/Control"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 63.0
+offset_right = 208.0
+offset_bottom = 90.0
+
+[node name="TextureRect" type="TextureRect" parent="MenuScene/ListHelpMenu/Control/HBoxContainerDirecionaBarco"]
+layout_mode = 2
+texture = ExtResource("15_ppcuy")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="MenuScene/ListHelpMenu/Control/HBoxContainerDirecionaBarco"]
+layout_mode = 2
+text = "   Direciona o barco"
+
+[node name="ContainerBarrilVida" type="HBoxContainer" parent="MenuScene/ListHelpMenu/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = 43.5
+offset_right = 113.0
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MenuScene/ListHelpMenu/Control/ContainerBarrilVida"]
+layout_mode = 2
+texture = ExtResource("17_qbbde")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MenuScene/ListHelpMenu/Control/ContainerBarrilVida"]
+layout_mode = 2
+text = "Barril de Vida (+15)"
+
+[node name="ContainerBalaCanhao" type="HBoxContainer" parent="MenuScene/ListHelpMenu/Control"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 114.0
+offset_right = 177.0
+offset_bottom = 137.0
+
+[node name="TextureRect" type="TextureRect" parent="MenuScene/ListHelpMenu/Control/ContainerBalaCanhao"]
+layout_mode = 2
+texture = ExtResource("18_f5fed")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MenuScene/ListHelpMenu/Control/ContainerBalaCanhao"]
+layout_mode = 2
+text = "   +1 Tiro (máx. 6)"
+
 [node name="PauseScene" type="Node2D" parent="."]
 visible = false
 use_parent_material = true
@@ -662,6 +768,109 @@ scale = Vector2(0.959167, 0.80875)
 texture = SubResource("CompressedTexture2D_4bufx")
 centered = false
 
+[node name="ButtonHelpPause" type="Button" parent="PauseScene"]
+offset_left = 1091.0
+offset_top = 19.0
+offset_right = 1128.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 20
+text = "?"
+
+[node name="ListHelpPause" type="ItemList" parent="PauseScene"]
+unique_name_in_owner = true
+visible = false
+offset_left = 904.0
+offset_top = 72.0
+offset_right = 1128.0
+offset_bottom = 275.0
+
+[node name="Control" type="Control" parent="PauseScene/ListHelpPause"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -113.0
+offset_top = 1.0
+offset_right = 111.0
+offset_bottom = 205.0
+grow_horizontal = 2
+
+[node name="HBoxContainerMoveBarco" type="HBoxContainer" parent="PauseScene/ListHelpPause/Control"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 11.0
+offset_right = 211.0
+offset_bottom = 46.0
+
+[node name="Label2" type="Label" parent="PauseScene/ListHelpPause/Control/HBoxContainerMoveBarco"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.379499, 0.477891, 0.326782, 1)
+theme_override_font_sizes/font_size = 25
+text = "W"
+
+[node name="Label" type="Label" parent="PauseScene/ListHelpPause/Control/HBoxContainerMoveBarco"]
+layout_mode = 2
+text = "    Movimenta o barco"
+
+[node name="HBoxContainerDirecionaBarco" type="HBoxContainer" parent="PauseScene/ListHelpPause/Control"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 63.0
+offset_right = 208.0
+offset_bottom = 90.0
+
+[node name="TextureRect" type="TextureRect" parent="PauseScene/ListHelpPause/Control/HBoxContainerDirecionaBarco"]
+layout_mode = 2
+texture = ExtResource("15_ppcuy")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="PauseScene/ListHelpPause/Control/HBoxContainerDirecionaBarco"]
+layout_mode = 2
+text = "   Direciona o barco"
+
+[node name="ContainerBarrilVida" type="HBoxContainer" parent="PauseScene/ListHelpPause/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = 43.5
+offset_right = 113.0
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PauseScene/ListHelpPause/Control/ContainerBarrilVida"]
+layout_mode = 2
+texture = ExtResource("17_qbbde")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="PauseScene/ListHelpPause/Control/ContainerBarrilVida"]
+layout_mode = 2
+text = "Barril de Vida (+15)"
+
+[node name="ContainerBalaCanhao" type="HBoxContainer" parent="PauseScene/ListHelpPause/Control"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 114.0
+offset_right = 177.0
+offset_bottom = 137.0
+
+[node name="TextureRect" type="TextureRect" parent="PauseScene/ListHelpPause/Control/ContainerBalaCanhao"]
+layout_mode = 2
+texture = ExtResource("18_f5fed")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="PauseScene/ListHelpPause/Control/ContainerBalaCanhao"]
+layout_mode = 2
+text = "   +1 Tiro (máx. 6)"
+
 [connection signal="add_arma" from="GameScene/Player" to="GameScene" method="_on_player_add_arma"]
 [connection signal="health_depleted" from="GameScene/Player" to="GameScene" method="_on_player_health_depleted"]
 [connection signal="timeout" from="GameScene/TimerBarco" to="GameScene" method="_on_timer_barco_timeout"]
@@ -674,6 +883,8 @@ centered = false
 [connection signal="pressed" from="MenuScene/Teste" to="MenuScene" method="_on_teste_pressed"]
 [connection signal="pressed" from="MenuScene/ExitButton" to="MenuScene" method="_on_exit_button_pressed"]
 [connection signal="pressed" from="MenuScene/ItemList/ButtonFecharLeaderboard" to="MenuScene" method="_on_button_fechar_leaderboard_pressed"]
+[connection signal="pressed" from="MenuScene/ButtonHelpMenu" to="MenuScene" method="_on_button_help_menu_pressed"]
 [connection signal="pressed" from="PauseScene/ButtonQuit" to="PauseScene" method="_on_button_quit_pressed"]
 [connection signal="pressed" from="PauseScene/ButtonResume" to="PauseScene" method="_on_button_resume_pressed"]
 [connection signal="pressed" from="PauseScene/ButtonMenu" to="PauseScene" method="_on_button_menu_pressed"]
+[connection signal="pressed" from="PauseScene/ButtonHelpPause" to="PauseScene" method="_on_button_help_pause_pressed"]

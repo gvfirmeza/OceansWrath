@@ -30,3 +30,10 @@ func _on_teste_pressed() -> void:
 
 func _on_button_fechar_leaderboard_pressed() -> void:
 	%ItemList.visible = false
+
+
+func _on_button_help_menu_pressed() -> void:
+	if(%ListHelpMenu.visible == false):
+		%ListHelpMenu.visible = true
+	else:
+		%ListHelpMenu.visible = false
