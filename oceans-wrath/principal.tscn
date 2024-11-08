@@ -630,7 +630,6 @@ text = "?"
 
 [node name="ListHelpMenu" type="ItemList" parent="MenuScene"]
 unique_name_in_owner = true
-visible = false
 offset_left = 915.0
 offset_top = 54.0
 offset_right = 1139.0
@@ -663,7 +662,7 @@ text = "W"
 
 [node name="Label" type="Label" parent="MenuScene/ListHelpMenu/Control/HBoxContainerMoveBarco"]
 layout_mode = 2
-text = "    Movimenta o barco"
+text = "    Move the Ship"
 
 [node name="HBoxContainerDirecionaBarco" type="HBoxContainer" parent="MenuScene/ListHelpMenu/Control"]
 layout_mode = 0
@@ -680,7 +679,7 @@ stretch_mode = 6
 
 [node name="Label" type="Label" parent="MenuScene/ListHelpMenu/Control/HBoxContainerDirecionaBarco"]
 layout_mode = 2
-text = "   Direciona o barco"
+text = "   Navigate the Ship"
 
 [node name="ContainerBarrilVida" type="HBoxContainer" parent="MenuScene/ListHelpMenu/Control"]
 layout_mode = 1
@@ -704,7 +703,7 @@ stretch_mode = 3
 
 [node name="Label" type="Label" parent="MenuScene/ListHelpMenu/Control/ContainerBarrilVida"]
 layout_mode = 2
-text = "Barril de Vida (+15)"
+text = "+15 Heal  "
 
 [node name="ContainerBalaCanhao" type="HBoxContainer" parent="MenuScene/ListHelpMenu/Control"]
 layout_mode = 0
@@ -721,7 +720,7 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="MenuScene/ListHelpMenu/Control/ContainerBalaCanhao"]
 layout_mode = 2
-text = "   +1 Tiro (máx. 6)"
+text = "   +1 Bullet"
 
 [node name="PauseScene" type="Node2D" parent="."]
 visible = false
